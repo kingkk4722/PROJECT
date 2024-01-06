@@ -1,0 +1,13 @@
+<!-- ownership_transfer/templates/ownership_transfer/verify_otp.html -->
+{% block title %}Verify OTP{% endblock %}
+
+{% block content %}
+  <h2>Verify OTP</h2>
+  <form method="post" action="{% url 'verify_otp' ownership.id=ownership.id %}">
+    {% csrf_token %}
+    <p>Enter the OTP sent to your mobile number to verify ownership transfer:</p>
+    <label for="otp">OTP:</label>
+    <input type="text" id="otp" name="otp" required>
+    <button type="submit">Verify OTP</button>
+  </form>
+{% endblock %}
